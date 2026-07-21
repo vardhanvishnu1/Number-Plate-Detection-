@@ -1,7 +1,8 @@
-tensorflow
-pillow
+--extra-index-url https://download.pytorch.org/whl/cpu
 streamlit
-opencv-python-headless
-easyocr
-ultralytics
 numpy
+pillow
+tensorflow
+ultralytics
+easyocr
+opencv-python-headless

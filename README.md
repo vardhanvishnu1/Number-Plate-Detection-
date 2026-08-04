@@ -1,6 +1,6 @@
 #  Automatic Number Plate Recognition (ANPR)
 
-**Deployed App:** [https://numberplaterecog.streamlit.app/)
+**Deployed App:** [https://numplaterecg.streamlit.app/)
 
 Real-Time Vehicle License Plate Detection and Alphanumeric Text Extraction System.
 

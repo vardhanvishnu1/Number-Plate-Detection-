@@ -4,7 +4,6 @@ import easyocr
 import re
 from ultralytics import YOLO
 
-# Initialize modern Deep Learning models (Replacing the crashing Haar Cascade line)
 model = YOLO('yolov8n.pt') 
 reader = easyocr.Reader(['en'], gpu=False)
 
@@ -25,7 +24,7 @@ def process_license_plate(image_path):
     if img is None: 
         return "Error: Image not found", None
 
-    # Run inference using your local YOLOv8 weights
+    # Run inference using local YOLOv8 weights
     results = model(img)
     
     detected_plates = []
@@ -33,8 +32,7 @@ def process_license_plate(image_path):
     # Iterate through YOLOv8 detections
     for result in results:
         for box in result.boxes:
-            # Check if your YOLO model coordinates match the targeted license plate class
-            # Note: If your custom model has class index 0 as license plate, check box.cls
+            
             x1, y1, x2, y2 = map(int, box.xyxy[0].tolist())
             
             # Calculate standard bounding box measurements
@@ -46,7 +44,7 @@ def process_license_plate(image_path):
             if plate_crop.size == 0:
                 continue
             
-            # --- Your excellent OCR Preprocessing Steps ---
+            
             # 1. Resize image up for clarity
             plate = cv2.resize(plate_crop, None, fx=2.0, fy=2.0, interpolation=cv2.INTER_CUBIC)
 
